@@ -1,0 +1,19 @@
+{{#if questions}}
+<ul class="tweets">
+  {{#each questions}}
+  <div class="card">
+    <div class="card-content">
+      <a class="card-title" href="/question/{{id}}">
+        {{ title }}
+        {{ content }}
+      </a>
+    </div>
+    <div class="card-action">
+      <a href="/user/{{ author.id }}" class="">{{ author.email }}</a>
+      <span class="tweet__date">{{ createdAt }}</span>
+      <span class="tweet_comments">{{ comments.length }} Comments</span>
+    </div>
+  </div>
+  {{/each}}
+</ul>
+{{/if}}
