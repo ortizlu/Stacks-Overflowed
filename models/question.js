@@ -1,6 +1,6 @@
 const mongoose = require('../db/connection')
 const Schema = mongoose.Schema
-const commentModel = require('./comment')
+const commentSchema = require('./comment')
 
 const Question = new Schema({
   title: String,
@@ -13,7 +13,7 @@ const Question = new Schema({
     type: Schema.Types.ObjectId,
     ref: 'User'
   },
-  comments: [commentModel]
+  comments: [commentSchema]
 })
 
 module.exports = mongoose.model('Question', Question)

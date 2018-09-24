@@ -1,5 +1,5 @@
 const User = require('../models/User')
-const { Question } = require('../models/question')
+const Question = require('../models/question')
 // const bcrypt = require('bcrypt-nodejs')
 
 // const createPassword = password =>
@@ -9,7 +9,7 @@ User.find({}).remove(() => {
   Question.find({}).remove(() => {
     let pancakeMan = User.create({
       email: 'pancake@gmail.com',
-      password: createPassword('password')
+      password: 'password'
     }).then(user => {
       Promise.all([
         Question.create({
@@ -34,7 +34,7 @@ User.find({}).remove(() => {
 
     let pancakeLover = User.create({
       email: 'pancakeLover@gmail.com',
-      password: createPassword('password')
+      password: 'password'
     }).then(user => {
       Promise.all([
         Question.create({
@@ -58,7 +58,7 @@ User.find({}).remove(() => {
 
     let pancakeQueen = User.create({
       email: 'pancakequeen@gmail.com',
-      password: createPassword('password')
+      password: 'password'
     }).then(user => {
       Promise.all([
         Question.create({
