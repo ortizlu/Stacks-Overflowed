@@ -1,0 +1,20 @@
+<section class="form-container">
+  <h4>New Question</h4>
+  <form action="/question" method="post" class="Question-form">
+  <input type="text" name="Question[title]" placeholder="title">
+    <div class="input-field">
+      <textarea name="Question[content]" cols="30" rows="10" placeholder="Question"></textarea>
+    </div>
+    <div class="">
+      <select name="author" id="author">
+        <option value="" disabled selected>Choose the User</option>
+        {{#each users}}
+        <option value="{{id}}">{{email}}</option>
+        {{/each}}
+      </select>
+    </div>
+    <div class="input-field">
+      <input type="submit" value="Ask Away" class="btn">
+    </div>
+  </form>
+</section>
