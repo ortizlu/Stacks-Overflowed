@@ -5,6 +5,8 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width" />
   <title>Stacks Overflowed</title>
+  <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.2/css/bootstrap.min.css">
+  <script src="//netdna.bootstrapcdn.com/bootstrap/3.0.2/js/bootstrap.min.js" defer></script>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/css/materialize.min.css">
   <link rel="stylesheet" href="/css/styles.css">
 </head>
@@ -13,16 +15,15 @@
   <header class="site-header">
     <nav class="grey lighten-5">
       <div class="nav-wrapper">
-        <a href="/" class="brand-logo left grey-text text-darken-3"><img class="logo" src="/img/pancake.png">Stacks
-          Overflowed</a>
+        <a href="/" class="brand-logo left grey-text text-darken-3"><img class="logo" src="/img/pancake.png">stacks<strong>overflowed</strong></a>
         <ul class="right grey-text text-darken-3">
           {{#if currentUser}}
-          <li><a href="/question/new">+Question</a></li>
-          <li><a href="/user/{{currentUser.id}}">Profile</a></li>
-          <li><a href="/user/logout">Log Out</a></li>
+          <li><a href="/question/new" class="grey-text text-darken-3">+Question</a></li>
+          <li><a href="/user/{{currentUser.id}}" class="grey-text text-darken-3">Profile</a></li>
+          <li><a href="/user/logout" class="grey-text text-darken-3">Log Out</a></li>
           {{else}}
           <li class="grey-text text-darken-3"><a href="/user/login" class="grey-text text-darken-3">Log In</a></li>
-          <li class="grey-text text-darken-3"><a href="/user/sign-up" class="grey-text text-darken-3">Sign Up</a></li>
+          <li class="grey-text text-darken-3"><a href="/user/signup" class="grey-text text-darken-3">Sign Up</a></li>
           {{/if}}
         </ul>
       </div>

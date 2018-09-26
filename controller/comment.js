@@ -6,7 +6,17 @@ const Comment = mongoose.model('Comment', commentSchema)
 
 module.exports = {
   create: (req, res) => {
-    console.log(req.params.id)
+    console.log(req.body)
+    Question.findById(req.body.id).then(question => {
+      Comment.create({
+        content: req.body.content
+      }).then(comment => {
+        question.comments.push(comment)
+        question.save(err => {
+          res.redirect(`/question/${req.body.id}`)
+        })
+      })
+    })
   },
   edit: (req, res) => {
     res.send('this is our comment using get request')
