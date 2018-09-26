@@ -1,27 +1,20 @@
+const mongoose = require('../db/connection')
+const Question = require('../models/question')
+const commentSchema = require('../models/comment')
+const User = require('../models/user')
+const Comment = mongoose.model('Comment', commentSchema)
+
 module.exports = {
-    new: (req, res) => {
-
-        res.send('this is our comment/new using get request')
-    },
-    show: (req, res) => {
-
-        res.send('this is our comment/show using get request')
-    },
-    create: (req, res) => {
-
-        res.send('this is our comment using post request')
-    },
-    edit: (req, res) => {
-
-        res.send('this is our comment using get request')
-        
-    },
-    update: (req, res) => {
-
-        res.send('this is our comment using put request')
-    },
-    destroy: (req, res) => {
-
-        res.send('this is our comment using delete request')
-    },
+  create: (req, res) => {
+    console.log(req.params.id)
+  },
+  edit: (req, res) => {
+    res.send('this is our comment using get request')
+  },
+  update: (req, res) => {
+    res.send('this is our comment using put request')
+  },
+  destroy: (req, res) => {
+    res.send('this is our comment using delete request')
+  }
 }
